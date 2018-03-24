@@ -1,0 +1,34 @@
+<div class="project-title">
+  <h1>Parties</h1>
+</div>
+
+<div class="btn-toolbar">
+  <%= link_to 'Create', new_event_party_path, class: 'btn-success' %>
+</div>
+
+<table class="data-grid">
+  <thead>
+    <tr>
+      <th class="primary">Title</th>
+      <th class="actions">&nbsp;</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @resources.present? %>
+      <% @resources.each do |record| %>
+        <tr>
+          <td class="primary"><%= link_to record.title, edit_party_path(record), class: 'primary-action' %></td>
+          <td class="actions">
+            <%= action_link :edit, edit_party_path(record) %>
+            <%= action_link :delete, party_path(record) %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="4">No records.</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

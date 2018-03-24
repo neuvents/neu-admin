@@ -1,6 +1,15 @@
 class Neu::Admin::ResourceController < ActionController::Base
   helper Neu::Admin::Helper
 
+  def self.resource(resource, location:, &scope)
+    define_method(:resource) { resource }
+
+    define_method(:resources_location, &location)
+    helper_method :resources_location
+
+    define_method(:resource_scope, &scope) if scope
+  end
+
   def index
     @resources = resource_scope
 
@@ -11,7 +20,7 @@ class Neu::Admin::ResourceController < ActionController::Base
   end
 
   def new
-    @resource = resource.new
+    @resource = resource_builder
 
     respond_to do |format|
       format.json { render json: @resource }
@@ -20,7 +29,8 @@ class Neu::Admin::ResourceController < ActionController::Base
   end
 
   def create
-    @resource = resource.create(resource_params)
+    @resource = resource_builder(resource_params)
+    @resource.save
 
     respond_to do |format|
       format.json { render json: @resource }
@@ -75,16 +85,15 @@ class Neu::Admin::ResourceController < ActionController::Base
     raise NotImplementedError
   end
 
-  def resource
-    raise NotImplementedError
-  end
-
-  def resources_location
-    raise NotImplementedError
-  end
-  helper_method :resources_location
-
   def resource_scope
-    resource.order(id: :desc)
+    resource.all
+  end
+
+  def resource_builder(attributes = {})
+    resource.new(attributes)
+  end
+
+  helper_method def resource_path
+    resource
   end
 end
