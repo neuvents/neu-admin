@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dummy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="admin-header">
+      <div class="container">
+        <div class="admin-header-wrapper">
+          <%= link_to 'Admin', '#', class: 'logo' %>
+
+          <nav>
+            <%= link_to 'Module 1', '#' %>
+            <%= link_to 'Module 2', '#', class: 'current' %>
+            <%= link_to 'Module 3', '#' %>
+
+            <div class="sub-menu">
+              Settings
+              <nav>
+                <%= link_to 'Administrators', '#' %>
+              </nav>
+            </div>
+          </nav>
+
+          <div class="profile">
+            <div class="username">
+              <%= icon(:user) %>
+              Pencho
+            </div>
+
+            <%= link_to icon(:logout), '#', method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <small>&copy; <%= Date.today.year %> Neuevents</small>
+      </div>
+    </div>
+  </body>
+</html>

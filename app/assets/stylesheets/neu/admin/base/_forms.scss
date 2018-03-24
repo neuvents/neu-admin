@@ -1,0 +1,123 @@
+.form-group {
+  width: 500px;
+  margin-bottom: 1em;
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='tel'],
+  input[type='number'],
+  input[type='url'],
+  textarea,
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.5em .5em;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  select {
+    background-position: right 0.5em center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hldnJvbi1kb3duIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
+  }
+
+  &.ckeditor { width: 800px; }
+}
+
+.has-error {
+  .control-label { color: #ce2b40; }
+
+  input[type='text'],
+  input[type='email'],
+  textarea,
+  select { border-color: #ce2b40; }
+
+  // input[type=text], input[type=email] {
+  //   background-position: right .5em center;
+  //   background-repeat: no-repeat;
+  //   background-size: 24px;
+  //   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXIteCI+PGxpbmUgeDE9IjE4IiB5MT0iNiIgeDI9IjYiIHkyPSIxOCI+PC9saW5lPjxsaW5lIHgxPSI2IiB5MT0iNiIgeDI9IjE4IiB5Mj0iMTgiPjwvbGluZT48L3N2Zz4=);
+  //  }
+
+  .help-block {
+    font-size: 0.85em;
+    color: #ce2b40;
+  }
+}
+
+.control-label {
+  display: inline-block;
+  width: auto;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: $heading-font;
+  font-weight: bold;
+  cursor: pointer;
+
+  .optional { color: $light-gray; }
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+}
+
+.checkbox {
+  input {
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
+  label {
+    display: inline-block;
+    width: auto;
+    font-size: 0.75em;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: $heading-font;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.radio-group {
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+  }
+
+  input {
+    position: relative;
+    top: -0.25em;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+}
+
+.form-inline {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2em;
+
+  select {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+
+  }
+  // select[name*="(1i)"], select[name*="(3i)"], select[name*="(4i)"], select[name*="(5i)"] { width: 150px; }
+  // select[name*="(1i)"] { width: 600px; }
+}

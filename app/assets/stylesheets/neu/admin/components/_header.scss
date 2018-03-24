@@ -1,0 +1,70 @@
+.admin-header {
+  margin-bottom: 2em;
+  background-color: $primary-darker;
+  color: $white;
+}
+
+.admin-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo, img { display: block; }
+
+  .logo {
+    &:hover { background-color: transparent; }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover { color: $lighter-gray; }
+  }
+
+  nav {
+    a {
+      display: inline-block;
+      padding: 1em;
+
+      &:hover, &.current {
+        color: $true-white;
+        background-color: $darker-gray;
+      }
+    }
+  }
+
+  .sub-menu {
+    position: relative;
+    display: inline-block;
+    padding: 1em;
+    cursor: pointer;
+
+    nav {
+      display: none;
+      position: absolute;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      z-index: 1;
+      width: 200px;
+      background-color: $primary-darker;
+
+      a { display: block; }
+    }
+
+    &:hover {
+      nav { display: block; }
+    }
+  }
+
+  .profile {
+    display: flex;
+
+    .username {
+      margin-right: 1em;
+
+      .icon { margin-right: 0.5em; }
+    }
+  }
+}

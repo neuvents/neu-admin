@@ -1,0 +1,14 @@
+<%= form_with model: @resource, data: {remote: false} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: 'control-label' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description, class: 'control-label' %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Save', class: 'btn-primary lg' %>
+  <%= link_to 'Cancel', resources_location, class: 'btn-secondary lg' %>
+<% end %>
