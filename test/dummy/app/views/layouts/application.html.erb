@@ -15,9 +15,9 @@
           <%= link_to 'Admin', '#', class: 'logo' %>
 
           <nav>
-            <%= link_to 'Module 1', '#' %>
-            <%= link_to 'Module 2', '#', class: 'current' %>
-            <%= link_to 'Module 3', '#' %>
+            <%= nav_link 'Module 1', '#', 'parties' %>
+            <%= nav_link 'Events', events_path, 'events' %>
+            <%= nav_link 'Module 3', '#', '#' %>
 
             <div class="sub-menu">
               Settings
@@ -43,10 +43,6 @@
       <%= yield %>
     </div>
 
-    <div class="footer">
-      <div class="container">
-        <small>&copy; <%= Date.today.year %> Neuevents</small>
-      </div>
-    </div>
+    <%= footer('Neuvents') %>
   </body>
 </html>

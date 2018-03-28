@@ -1,4 +1,4 @@
-class Neu::Admin::ResourceController < ActionController::Base
+class Neu::Admin::ResourceController < Admin::ApplicationController
   helper Neu::Admin::Helper
 
   def self.resource(resource, location:, &scope)
