@@ -51,6 +51,34 @@ The DSL accepts the model and index location (used for redirects and Cancel butt
 
 You can override the resource_scope method in your controllers to add scopes, paging, search and so on.
 
+### Nested resources
+
+Here's an example of the controller code for a nested resource (assume that Event has many Parties and shallow routes):
+
+```ruby
+class PartiesController < ResourceController
+  resource Party, location: -> { event_parties_path(event) }
+
+  private
+
+  def event
+    @event ||= @resource.present? ? @resource.event : Event.find(params[:event_id])
+  end
+
+  def resource_builder(attributes = {})
+    event.parties.build(attributes)
+  end
+
+  def resource_path
+    @resource.persisted? ? @resource : [event, @resource]
+  end
+
+  def resource_params
+    params.require(:party).permit(:title)
+  end
+end
+```
+
 ## Views
 
 For the Views you need to supply your own index.html.erb and _form.html.erb

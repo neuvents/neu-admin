@@ -88,6 +88,12 @@
     font-weight: bold;
     cursor: pointer;
   }
+
+  span.optional { color: $light-gray; }
+}
+
+.check_boxes {
+  .checkbox { display: block; }
 }
 
 .radio-group {

@@ -1,0 +1,22 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $black;
+  color: $white;
+
+  label { color: $white; }
+
+  img {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  button { margin-top: 1em; }
+
+  .login-form { width: 300px; }
+
+  .form-group { width: 100%; }
+}
