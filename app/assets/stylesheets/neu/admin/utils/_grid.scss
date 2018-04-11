@@ -83,6 +83,18 @@
   }
 }
 
+%ninth-cols {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-tablet) {
+      grid-column: span 4;
+    }
+    @include bp($bp-desktop) {
+      grid-column: span 9;
+    }
+  }
+}
+
 %shift-1 {
   @supports (display: grid) {
     grid-column: span 4;
@@ -145,6 +157,10 @@
 
 .eight {
   @extend %eight-cols;
+}
+
+.ninth {
+  @extend %ninth-cols;
 }
 
 .shift-1 {
