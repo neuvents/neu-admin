@@ -1,0 +1,51 @@
+.info-panel {
+    display: inline-block;
+    max-width: 445px;
+    width: 100%;
+    margin-bottom: 1.25em;
+    padding: 1.25em;
+    background-color: $info-panel-background-color;
+}
+
+.info-header {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.25em;
+    vertical-align: bottom;
+
+    .info-title,
+    .info-date {
+        display: block;
+        float: flip(left, right);
+    }
+
+    .info-title {
+        h6 {
+            position: relative;
+            top: -10px;
+            display: inline-block;
+            margin-left: .25em;
+        }
+    }
+
+    .info-date {
+        float: flip(right, left);
+        font-size: 10px;
+        color: #6D6D72;
+        text-align: flip(right, left);
+    }
+
+}
+
+.info-content-holder {
+    margin-bottom: 1.25em;
+    font-size: 12px;
+}
+
+.info-footer {
+
+    .cta-button {
+        color: $primary;
+        text-decoration: none;
+    }
+}

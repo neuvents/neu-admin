@@ -1,0 +1,27 @@
+.resource-picker {
+  .autocomplete-result {
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+    padding: .5em;
+    cursor: pointer;
+    background-color: $white;
+
+    .autocomplete-primary {
+      //
+    }
+
+    .autocomplete-secondary {
+      color: $light-gray;
+    }
+
+    &.focus { background-color: transparentize($primary, .9); }
+  }
+
+  .additional-link {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover { background-color: #EBF1FE; }
+  }
+}

@@ -1,0 +1,46 @@
+.data-grid {
+  width: 100%;
+
+  .id { width: 70px; }
+
+  .number {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .bool {
+    text-align: center;
+  }
+
+  .primary-action {
+    color: $primary;
+  }
+
+  .actions {
+    width: 120px;
+    text-align: right;
+
+    a {
+      margin-right: .25em;
+
+      &:last-child { margin-right: 0; }
+    }
+  }
+
+  tbody {
+    tr {
+      .actions {
+        a { opacity: 0 }
+      }
+
+      &:hover {
+        background-color: transparentize($lighter-gray, .7);
+        border-bottom-color: $light-gray;
+
+        .actions {
+          a { opacity: 1; }
+        }
+      }
+    }
+  }
+}

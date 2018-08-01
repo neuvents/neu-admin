@@ -1,0 +1,216 @@
+@import 'grid-legacy';
+
+.container {
+  width: 100%;
+  padding: 0 $gutter / 2;
+
+  @include bp($bp-desktop) {
+    width: $container-width;
+    margin: 0 auto;
+  }
+}
+
+.fluid-container {
+  width: 100%;
+}
+
+.grid {
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(4, [col-start] 1fr);
+    grid-gap: $gutter;
+
+    @include bp($bp-desktop) {
+      grid-template-columns: repeat(12, [col-start] 1fr);
+    }
+  }
+}
+
+%full-width {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-desktop) {
+      grid-column: span 12;
+    }
+  }
+}
+
+%half-width {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-tablet) {
+      grid-column: span 2;
+    }
+    @include bp($bp-desktop) {
+      grid-column: span 6;
+    }
+  }
+}
+
+%third-width {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-tablet) {
+      grid-column: span 2;
+    }
+    @include bp($bp-desktop) {
+      grid-column: span 4;
+    }
+  }
+}
+
+%fourth-width {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-tablet) {
+      grid-column: span 2;
+    }
+    @include bp($bp-desktop) {
+      grid-column: span 3;
+    }
+  }
+}
+
+%eight-cols {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-tablet) {
+      grid-column: span 4;
+    }
+    @include bp($bp-desktop) {
+      grid-column: span 8;
+    }
+  }
+}
+
+%ninth-cols {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-tablet) {
+      grid-column: span 4;
+    }
+    @include bp($bp-desktop) {
+      grid-column: span 9;
+    }
+  }
+}
+
+%shift-1 {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-desktop) {
+      grid-column: 2 / span 10;
+    }
+  }
+}
+
+%shift-2 {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-desktop) {
+      grid-column: 3 / span 8;
+    }
+  }
+}
+
+%shift-3 {
+  @supports (display: grid) {
+    grid-column: span 4;
+    @include bp($bp-desktop) {
+      grid-column: 4 / span 6;
+    }
+  }
+}
+
+%shift-4 {
+  @supports (display: grid) {
+    grid-column: span 5;
+    @include bp($bp-desktop) {
+      grid-column: 5 / span 4;
+    }
+  }
+}
+
+// Defaults
+.grid {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.full-width {
+  @extend %full-width;
+}
+
+.half {
+  @extend %half-width;
+}
+
+.third {
+  @extend %third-width;
+}
+
+.fourth {
+  @extend %fourth-width;
+}
+
+.eight {
+  @extend %eight-cols;
+}
+
+.ninth {
+  @extend %ninth-cols;
+}
+
+.shift-1 {
+  @extend %shift-1;
+}
+
+.shift-2 {
+  @extend %shift-2;
+}
+
+.shift-3 {
+  @extend %shift-3;
+}
+
+.shift-4 {
+  @extend %shift-4;
+}
+
+// Grid Debug
+#debug {
+  display: none;
+
+  @extend .grid;
+  @extend .container;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  margin: 0 auto;
+  pointer-events: none;
+
+  .col {
+    grid-column: span 1;
+    background-color: rgba(255, 0, 0, 0.25);
+
+    &:nth-child(n + 5) {
+      display: none;
+    }
+
+    @include bp($bp-desktop) {
+      &:nth-child(n + 5) {
+        display: block;
+      }
+    }
+  }
+
+  &.debug-on {
+    display: grid;
+  }
+}

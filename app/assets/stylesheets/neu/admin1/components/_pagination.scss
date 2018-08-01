@@ -1,0 +1,17 @@
+.pagination {
+  em { font-style: normal; }
+
+  a { text-decoration: none; }
+
+  span, a, em {
+    border: 1px solid $lighter-gray;
+    border-radius: 3px;
+    display: inline-block;
+    padding: .25em .75em;
+  }
+
+  a:hover, .current {
+    border-color: $primary;
+    color: $primary;
+  }
+}

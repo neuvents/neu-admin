@@ -1,6 +1,6 @@
 $true-black: #000;
 $true-white: #fff;
-$black: #262626;
+$black: #1F233F;
 $white: #fefefe;
 $lighter-gray: #ddd;
 $light-gray: #aaa;
@@ -8,8 +8,25 @@ $gray: #888;
 $dark-gray: #666;
 $darker-gray: #555;
 
-$primary-darker: #1F252C;
+$primary-darker: #1F233F;
 $primary-dark: #252D35;
-$primary: #4196E0;
-$danger: #c82333;
-$success: #28a745;
+$primary: #2E72F6;
+$primary-dark-blue: #125AE6;
+$primary-gray: #F3F3F3;
+$primary-light-gray: #F3F1FF;
+$danger: #E93C4D;
+$success: #F3F3F3;
+
+// Menu colors
+$menu-background-color:#f9f9f9;
+$menu-box-shadow-color: #c5c5c5;
+$menu-active-color: $primary;
+
+// Borders
+$border-color: #F5F5F5;
+
+// Tags input
+$tag-background-color: #f9f9f9;
+
+// Info panel
+$info-panel-background-color: #f9f9f9;

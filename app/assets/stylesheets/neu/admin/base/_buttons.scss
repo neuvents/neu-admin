@@ -5,25 +5,24 @@ button { cursor: pointer; }
 .btn-success,
 .btn-danger,
 .btn-default,
+.btn-filter,
 .btn-text {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 0;
   margin: 0;
   padding: 0;
-  background: transparent;
+  background: $primary;
   text-decoration: none;
   display: inline-block;
-  line-height: 1;
-  border-radius: 3px;
-  padding: 0.75em 1em;
-  font-size: 16px;
-  font-weight: 600;
-  border-width: 1px;
-  border-style: solid;
+  line-height: normal;
+  border-radius: 2px;
+  padding: 0.5em 1.375em; // 5px 22px
+  font-size: 14px;
+  letter-spacing: normal;
+  border: 0;
   text-align: center;
-  color: #fff;
-  text-transform: uppercase;
+  color: $primary-darker;
   font-family: $heading-font;
   transition: all 0.3s ease-in-out;
 
@@ -37,60 +36,65 @@ button { cursor: pointer; }
 }
 
 [class^="btn-"]  {
-  & + & { margin-left: $gutter / 4; }
+  & + & { #{$margin-left}: $gutter; }
 }
 
 .btn-primary {
-  border-color: $primary;
   background-color: $primary;
+  color: $true-white;
 
   &:hover {
-    border-color: darken($primary, 7);
-    background-color: darken($primary, 7);
+    background-color: $primary-dark-blue;
   }
 }
 
 .btn-secondary {
-  border-color: $light-gray;
-  color: #000;
+  background-color: $primary-gray;
 
   &:hover {
-    border-color: $black;
-    color: #000;
+    background-color: $primary-light-gray;
+    color: $primary;
   }
 }
 
 .btn-success {
-  border-color: $success;
-  background-color: $success;
+  background-color: $primary;
   color: $true-white;
 
   &:hover {
-    border-color: darken($success, 7);
-    background-color: darken($success, 7);
+    background-color: $primary-dark-blue;
   }
 }
 
 .btn-danger {
-  border-color: $danger;
-  background-color: $danger;
-  color: $true-white;
+  background-color: $primary-gray;
+  color: $danger;
 
   &:hover {
-    border-color: darken($danger, 7);
-    background-color: darken($danger, 7);
+    background-color: $danger;
+    color: $true-white;
+  }
+}
+
+.btn-filter {
+  background-color: $primary-gray;
+  color: $primary-darker;
+  &:hover {
+    background-color: $primary-light-gray;
+    color: $primary;
   }
 }
 
 .btn-text {
   padding: 0;
-  color: $black;
-  border-color: transparent;
   border: 0;
+  color: $primary;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
   border-radius: 0;
 
   &:hover {
-    color: $gray;
+    border-color: $primary;
   }
 
   &.invert {

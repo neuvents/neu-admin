@@ -1,0 +1,197 @@
+$rtl: false !default;
+
+@import 'config/module';
+@import 'utils/module';
+@import 'base/module';
+@import 'components/module';
+@import 'pages/module';
+
+$pending: #FBB646;
+$processed: #77A5FF;
+$shipped: #AF6BF2;
+$completed: #11BD95;
+$cancelled: #E93C4D;
+
+.status {
+  &:before {
+    content: '';
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    #{margin-right}: .5em;
+    width: .6em;
+    height: .6em;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+
+  &.pending {
+    color: $pending;
+
+    &:before {
+      background-color: $pending;
+      border-color: $pending;
+    }
+  }
+
+  &.processed {
+    color: $processed;
+
+    &:before {
+      background-color: $processed;
+      border-color: $processed;
+    }
+  }
+
+  &.shipped {
+    color: $shipped;
+
+    &:before {
+      background-color: $shipped;
+      border-color: $shipped;
+    }
+  }
+
+  &.completed {
+    color: $completed;
+
+    &:before {
+      background-color: $completed;
+      border-color: $completed;
+    }
+  }
+
+  &.cancelled {
+    color: $cancelled;
+
+    &:before {
+      background-color: $cancelled;
+      border-color: $cancelled;
+    }
+  }
+
+  &.returned {
+    color: $cancelled;
+
+    &:before {
+      background-color: transparent;
+      border-color: $cancelled;
+    }
+  }
+}
+
+.order-status {
+  .form-group {
+    display: inline-block;
+
+    &:before {
+      content: '';
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      #{margin-right}: .5em;
+      width: .6em;
+      height: .6em;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+  }
+
+  select {
+    display: inline-block;
+    width: auto;
+    border-bottom: 0;
+  }
+
+  &.pending {
+    select { color: $pending; }
+
+    .form-group {
+      &:before {
+        background-color: $pending;
+        border-color: $pending;
+      }
+    }
+  }
+
+  &.processed {
+    select { color: $processed; }
+
+    .form-group {
+      &:before {
+        background-color: $processed;
+        border-color: $processed;
+      }
+    }
+  }
+
+  &.shipped {
+    select { color: $shipped; }
+
+    .form-group {
+      &:before {
+        background-color: $shipped;
+        border-color: $shipped;
+      }
+    }
+  }
+
+  &.completed {
+    select { color: $completed; }
+
+    .form-group {
+      &:before {
+        background-color: $completed;
+        border-color: $completed;
+      }
+    }
+  }
+
+  &.cancelled {
+    select { color: $cancelled; }
+
+    .form-group {
+      &:before {
+        background-color: $cancelled;
+        border-color: $cancelled;
+      }
+    }
+  }
+
+  &.returned {
+    select { color: $cancelled; }
+
+    .form-group {
+      &:before {
+        background-color: transparent;
+        border-color: $cancelled;
+      }
+    }
+  }
+}
+
+.customer-note {
+  margin-top: 2em;
+
+  p:last-of-type { margin-bottom: 0; }
+
+  .meta { color: $light-gray; }
+}
+
+.search-toolbar-container {
+  position: relative;
+  #{margin-left}: 1.5em;
+  display: inline-block;
+
+  .clear-search {
+    position: absolute;
+    right: 0;
+    bottom: 1.9em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXIteCI+PGxpbmUgeDE9IjE4IiB5MT0iNiIgeDI9IjYiIHkyPSIxOCI+PC9saW5lPjxsaW5lIHgxPSI2IiB5MT0iNiIgeDI9IjE4IiB5Mj0iMTgiPjwvbGluZT48L3N2Zz4=);
+  }
+}
