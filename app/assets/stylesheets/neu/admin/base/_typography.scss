@@ -1,43 +1,7 @@
-@import url("//hello.myfonts.net/count/371357");
+@import url('https://rsms.me/inter/inter-ui.css');
 
-@font-face {
-  font-family: 'SSTArabic-Bold';
-  src: font-url('none/371357_0_0.eot');
-  src: font-url('none/371357_0_0.eot?#iefix') format('embedded-opentype'),
-  font-url('none/371357_0_0.woff2') format('woff2'),
-  font-url('none/371357_0_0.woff') format('woff'),
-  font-url('none/371357_0_0.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'SSTArabic-Light';
-  src: font-url('none/371357_1_0.eot');
-  src: font-url('none/371357_1_0.eot?#iefix') format('embedded-opentype'),
-  font-url('none/371357_1_0.woff2') format('woff2'),
-  font-url('none/371357_1_0.woff') format('woff'),
-  font-url('none/371357_1_0.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'SSTArabic-Medium';
-  src: font-url('none/371357_2_0.eot');
-  src: font-url('none/371357_2_0.eot?#iefix') format('embedded-opentype'),
-  font-url('none/371357_2_0.woff2') format('woff2'),
-  font-url('none/371357_2_0.woff') format('woff'),
-  font-url('none/371357_2_0.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'SSTArabic-Roman';
-  src: font-url('none/371357_3_0.eot');
-  src: font-url('none/371357_3_0.eot?#iefix') format('embedded-opentype'),
-  font-url('none/371357_3_0.woff2') format('woff2'),
-  font-url('none/371357_3_0.woff') format('woff'),
-  font-url('none/371357_3_0.ttf') format('truetype');
-}
-
-$body-font: 'SSTArabic-Roman', sans-serif;
-$heading-font: 'SSTArabic-Medium', sans-serif;
+$body-font: 'Inter UI', sans-serif;
+$heading-font: 'Inter UI', sans-serif;
 
 body {
   padding-bottom: 3em;
@@ -54,7 +18,7 @@ h4,
 h5,
 h6 {
   font-family: $heading-font;
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
