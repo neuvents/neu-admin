@@ -1,0 +1,74 @@
+.order-status-form {
+  form {
+    display: inline-block;
+    #{$margin-left}: .5em;
+  }
+
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+
+    .control-label { display: none; }
+  }
+}
+
+.order-form {
+  width: 920px;
+  .flex-toolbar { margin-bottom: 1em; }
+
+  .section-toggle {
+    input {
+      position: relative;
+      top: -1px;
+      #{$margin-right}: .5em;
+    }
+  }
+
+  .form-columns {
+    .form-col {
+      width: 33%;
+
+      .form-group { max-width: 100%; }
+
+      // .value { border-bottom: 1px solid $black; }
+    }
+  }
+
+  table {
+    th, td {
+      padding-top: .25em;
+      padding-bottom: .25em;
+    }
+
+    .form-group {
+      display: inline-block;
+      margin-bottom: 0;
+      max-width: 50px;
+
+      input {
+        border-bottom: 0;
+        text-align: right;
+      }
+    }
+
+    .number {
+      width: 150px;
+      text-align: right;
+    }
+
+    .actions { width: 50px; }
+
+    .btn-text {
+      font-family: $body-font;
+      padding-left: 0;
+      padding-right: 0;
+      color: $danger;
+
+      &:hover { border-color: $danger; }
+    }
+  }
+
+  .shipping-notes {
+    .form-group { max-width: 540px; }
+  }
+}

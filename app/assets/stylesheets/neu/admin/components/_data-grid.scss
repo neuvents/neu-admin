@@ -4,7 +4,7 @@
   .id { width: 70px; }
 
   .number {
-    text-align: right;
+    text-align: flip(right, left);
     white-space: nowrap;
   }
 
@@ -13,29 +13,45 @@
   }
 
   .primary-action {
-    color: $primary;
+    color: #000;
+    text-decoration: none;
+
+    &:hover { color: $primary; }
   }
 
   .actions {
     width: 120px;
-    text-align: right;
+    text-align: flip(right, left);
 
     a {
-      margin-right: .25em;
+      #{$margin-right}: .25em;
 
-      &:last-child { margin-right: 0; }
+      &:last-child { #{$margin-right}: 0; }
+    }
+  }
+
+  thead {
+    th {
+      font-size: 16px;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
     }
   }
 
   tbody {
+
     tr {
+      transition: all .3s ease-in-out;
+
       .actions {
         a { opacity: 0 }
       }
 
       &:hover {
-        background-color: transparentize($lighter-gray, .7);
-        border-bottom-color: $light-gray;
+        background-color: transparentize(#efefef, .7);
+        border-bottom-color: #ccc;
 
         .actions {
           a { opacity: 1; }

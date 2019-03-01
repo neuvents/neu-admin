@@ -1,0 +1,36 @@
+.sidebar-navigation {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    #{$left}: 0;
+    float: flip(left, right);
+    width: 60px;
+    height: 100vh;
+    background-color: $menu-background-color;
+    box-shadow: flip(1px 0 0 0 $menu-box-shadow-color, 0 0 0 1px $menu-box-shadow-color);
+    
+    .sidebar-navigation--list {
+        list-style-type: none;
+        display: block;
+        float: flip(left, right);
+        width: 100%;
+        height: calc(100% - 144px);
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        &.bottom {
+            height: initial;
+        }
+
+        li {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+            
+            a {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

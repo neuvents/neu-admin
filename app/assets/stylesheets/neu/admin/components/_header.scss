@@ -1,10 +1,19 @@
+.admin-body {
+  display: block;
+  float: flip(left, right);
+  width: calc(100% - 60px);
+  #{$margin-left}: 60px;
+}
+
 .admin-header {
   margin-bottom: 2em;
-  background-color: $primary-darker;
-  color: $white;
+  background-color: $menu-background-color;
+  box-shadow: 0 1px 0 0 $menu-box-shadow-color;
+  color: $primary-darker;
 }
 
 .admin-header-wrapper {
+  min-height: 67px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,20 +25,37 @@
   }
 
   a {
-    color: $white;
+    position: relative;
+    color: $primary-darker;
     text-decoration: none;
 
-    &:hover { color: $lighter-gray; }
+    &:hover {
+      color: $primary;
+    }
   }
 
   nav {
-    a {
-      display: inline-block;
-      padding: 1em;
+    #{$margin-left}: -1em;
 
-      &:hover, &.current {
-        color: $true-white;
-        background-color: $darker-gray;
+    h2, a { display: inline-block; }
+
+    h2 {
+      position: relative;
+      top: 2px;
+      margin: 0;
+      #{$margin-left}: .66em;
+      font-family: $body-font;
+      font-size: 1.5em;
+    }
+
+    a {
+      #{$margin-left}: 1em;
+      border-bottom: 1px solid transparent;
+
+      &:hover,
+      &.current {
+        color: $primary;
+        border-bottom-color: $primary;
       }
     }
   }
@@ -43,14 +69,22 @@
     nav {
       display: none;
       position: absolute;
-      left: 0;
+      #{$left}: 0;
       padding: 0;
       margin: 0;
       z-index: 1;
       width: 200px;
-      background-color: $primary-darker;
+      background-color: $menu-background-color;
 
-      a { display: block; }
+      a {
+        display: block;
+
+        &:hover {
+          &::before {
+            content: none;
+          }
+        }
+      }
     }
 
     &:hover {
@@ -62,9 +96,9 @@
     display: flex;
 
     .username {
-      margin-right: 1em;
+      #{$margin-right}: 1em;
 
-      .icon { margin-right: 0.5em; }
+      .icon { #{$margin-right}: 0.5em; }
     }
   }
 }

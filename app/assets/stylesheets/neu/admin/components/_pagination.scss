@@ -1,17 +1,27 @@
 .pagination {
+  padding-top: 3em;
+
   em { font-style: normal; }
 
   a { text-decoration: none; }
 
   span, a, em {
-    border: 1px solid $lighter-gray;
-    border-radius: 3px;
+    border: none;
+    border-radius: 2px;
     display: inline-block;
-    padding: .25em .75em;
+    min-width: 30px;
+    min-height: 30px;
+    #{$margin-right}: 0.25em;
+    padding: 0.188em 0.688em; // 3px 11px
+    font-size: 16px;
+    color: $primary-darker;
+    background-color: $primary-gray;
   }
 
   a:hover, .current {
-    border-color: $primary;
-    color: $primary;
+    color: $true-white;
+    background-color: $primary;
   }
+
+  .previous_page, .next_page { display: none; }
 }

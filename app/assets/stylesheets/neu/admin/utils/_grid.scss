@@ -2,10 +2,10 @@
 
 .container {
   width: 100%;
-  padding: 0 $gutter / 2;
+  padding: flip(0 $gutter 0 165px, 0 165px 0 $gutter);
 
   @include bp($bp-desktop) {
-    width: $container-width;
+    // width: $container-width;
     margin: 0 auto;
   }
 }
@@ -188,8 +188,8 @@
 
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  #{$left}: 0;
+  #{$right}: 0;
   bottom: 0;
   height: 100vh;
   margin: 0 auto;
