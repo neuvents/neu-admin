@@ -1,11 +1,38 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://indestructibletype-fonthosting.github.io/renner.css');
 
-$body-font: 'Noto Sans', sans-serif;
-$heading-font: 'Noto Sans', sans-serif;
+:root {
+  --base-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  --fs-base: 16px;
+  --base-line-height: 1.666;
+  --fraction: 1.25;
+
+  --fs-small: calc(var(--fs-base) / var(--fraction));
+  --fs-tiny: calc(var(--fs-small) / var(--fraction));
+  --fs-medium: calc(var(--fs-base) * var(--fraction));
+  --fs-large: calc(var(--fs-medium) * var(--fraction));
+  --fs-xlarge: calc(var(--fs-large) * var(--fraction));
+  --fs-xxlarge: calc(var(--fs-xlarge) * var(--fraction));
+  --fs-huge: calc(var(--fs-xxlarge) * var(--fraction));
+}
 
 body {
-  font-family: $body-font;
+  color: var(--black);
+  font-family: var(--base-font);
+  font-size: var(--fs-base);
+  line-height: var(--base-line-height);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+a { color: var(--brand); }
+
+small { font-size: var(--fs-small); }
+.tiny { font-size: var(--fs-tiny); }
+.muted { opacity: 0.4; }
 
 h1,
 h2,
@@ -13,104 +40,78 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font;
-  font-weight: 700;
-}
-
-body {
-  font-family: $body-font;
-  font-weight: 300;
-  line-height: 1.66;
-  color: $black;
-  background-color: $white;
-
-  @include bp($bp-desktop) {
-    font-size: 16px;
-  }
-
-  @include bp($bp-mobile) {
-    font-size: 14px;
-  }
-}
-
-a {
-  color: #262626;
-  text-decoration: underline;
-
-  &:hover { text-decoration: none; }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0.5em;
-  line-height: 1.3;
+  font-family: var(--heading-font); // style
+  line-height: var(--base-line-height);
+  font-weight: 700; // style
 }
 
 h1 {
-  line-height: 1;
+  line-height: 1.2;
 
   @include bp($bp-desktop) {
-    font-size: 2.369em;
+    font-size: var(--fs-huge);
   }
 
   @include bp($bp-mobile) {
-    font-size: 3em;
+    font-size: 40px;
   }
 }
 
 h2 {
-  line-height: 1.1;
+  line-height: 1.2;
 
   @include bp($bp-desktop) {
-    font-size: 1.777em;
+    font-size: var(--fs-xxlarge);
   }
 
   @include bp($bp-mobile) {
-    font-size: 2.5em;
+    font-size: 36px;
   }
 }
 
 h3 {
+  line-height: 1.3;
 
   @include bp($bp-desktop) {
-    font-size: 1.333em;
+    font-size: var(--fs-xlarge);
   }
 
   @include bp($bp-mobile) {
-    font-size: 1.7em;
+    font-size: 30px;
   }
 }
 
-h4,
+h4 {
+  font-size: var(--fs-medium);
+  line-height: 1.3;
+}
+
 h5,
 h6 {
-  font-weight: 600;
-  font-size: 1em;
+  font-size: var(--fs-base);
 }
 
-p {
-  margin-bottom: 1em;
-}
-
-small {
-  font-size: 0.85em;
+h6 {
+  font-family: var(--base-font);
+  font-weight: bold;
+  text-transform: none;
 }
 
 ul,
 ol {
   list-style-position: inside;
-  margin-bottom: 1em;
+
+  li { margin-bottom: 0.5em; }
+
+  ul, li { margin-left: 1em; }
 }
 
 blockquote {
-  padding-left: 1em;
-  border-left: 6px solid #ddd;
-  font-size: 1.414em;
-  color: #666;
+  font-family: var(--heading-font);
+  font-size: var(--fs-large);
+  line-height: 1.2;
+  font-weight: 300;
+  font-style: italic;
 }
 
 table {
@@ -130,3 +131,4 @@ table {
 }
 
 .text-center { text-align: center; }
+.text-right { text-align: right; }

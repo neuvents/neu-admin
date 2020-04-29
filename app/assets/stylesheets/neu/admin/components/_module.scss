@@ -1,11 +1,7 @@
-$base: 1;
-$background: 2;
-$overlay: 3;
-$plane-1: 4;
-$plane-2: 5;
-
 @import 'header';
 @import 'footer';
 @import 'icons';
 @import 'data-grid';
 @import 'pagination';
+@import 'btn-toolbar';
+@import 'page-title';

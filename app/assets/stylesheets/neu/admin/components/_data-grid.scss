@@ -13,7 +13,7 @@
   }
 
   .primary-action {
-    color: $primary;
+    color: var(--brand);
   }
 
   .actions {
@@ -34,8 +34,8 @@
       }
 
       &:hover {
-        background-color: transparentize($lighter-gray, .7);
-        border-bottom-color: $light-gray;
+        background-color: var(--lighter-gray);
+        border-bottom-color: var(--light-gray);
 
         .actions {
           a { opacity: 1; }

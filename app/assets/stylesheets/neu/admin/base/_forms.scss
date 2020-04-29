@@ -1,75 +1,52 @@
-.form-group {
-  width: 500px;
-  margin-bottom: 1em;
+textarea { resize: vertical; }
 
-  input[type='text'],
-  input[type='email'],
-  input[type='password'],
-  input[type='tel'],
-  input[type='number'],
-  input[type='url'],
-  textarea,
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding: 0.5em .5em;
-    outline: none;
-    font-size: 16px;
-    border: 1px solid $light-gray;
-    border-radius: 3px;
-
-    &:focus {
-      border-color: $primary;
-    }
-  }
-
-  select {
-    background-position: right 0.5em center;
-    background-repeat: no-repeat;
-    background-size: 24px;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hldnJvbi1kb3duIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
-  }
-
-  &.ckeditor { width: 800px; }
+select {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hldnJvbi1kb3duIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center right 0.5em;
 }
 
-.has-error {
-  .control-label { color: #ce2b40; }
-
-  input[type='text'],
-  input[type='email'],
-  textarea,
-  select { border-color: #ce2b40; }
-
-  // input[type=text], input[type=email] {
-  //   background-position: right .5em center;
-  //   background-repeat: no-repeat;
-  //   background-size: 24px;
-  //   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXIteCI+PGxpbmUgeDE9IjE4IiB5MT0iNiIgeDI9IjYiIHkyPSIxOCI+PC9saW5lPjxsaW5lIHgxPSI2IiB5MT0iNiIgeDI9IjE4IiB5Mj0iMTgiPjwvbGluZT48L3N2Zz4=);
-  //  }
-
-  .help-block {
-    font-size: 0.85em;
-    color: #ce2b40;
-  }
-}
-
-.control-label {
-  display: inline-block;
-  width: auto;
-  font-size: 0.75em;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-family: $heading-font;
-  font-weight: bold;
-  cursor: pointer;
-
-  .optional { color: $light-gray; }
-}
-
-.form-control {
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
   display: block;
   width: 100%;
+  padding: 0.5em 0.5em;
+  border: none;
+  border-bottom: 2px solid var(--dark-gray);
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--lighter-gray);
+  color: var(--black);
+  font-family: var(--base-font);
+  font-size: 1em;
+  line-height: 1.5;
+  transition: all 0.2s ease-in-out;
+
+  &:focus { border-color: var(--brand-light); }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.form-group { margin-bottom: 1em; }
+
+.control-label {
+  color: var(--black);
+  font-size: 1em;
+  font-weight: 600;
+
+  span.optional { color: var(--gray); }
 }
 
 .checkbox {
@@ -84,12 +61,11 @@
     font-size: 0.75em;
     font-weight: 500;
     text-transform: uppercase;
-    font-family: $heading-font;
     font-weight: bold;
     cursor: pointer;
   }
 
-  span.optional { color: $light-gray; }
+  span.optional { color: var(--gray); }
 }
 
 .check_boxes {
@@ -124,6 +100,15 @@
     &:last-child { margin-right: 0; }
 
   }
-  // select[name*="(1i)"], select[name*="(3i)"], select[name*="(4i)"], select[name*="(5i)"] { width: 150px; }
-  // select[name*="(1i)"] { width: 600px; }
+}
+
+.help-block { opacity: 0.8; }
+
+.has-error {
+  opacity: 1;
+  color: var(--error);
+}
+
+@include bp($bp-desktop) {
+  .form-group { max-width: 600px; }
 }
