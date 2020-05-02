@@ -29,17 +29,9 @@
 
   tbody {
     tr {
-      .actions {
-        a { opacity: 0 }
-      }
-
       &:hover {
         background-color: var(--lighter-gray);
         border-bottom-color: var(--light-gray);
-
-        .actions {
-          a { opacity: 1; }
-        }
       }
     }
   }
