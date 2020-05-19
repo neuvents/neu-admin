@@ -102,11 +102,13 @@ select {
   }
 }
 
-.help-block { opacity: 0.8; }
+.help-block { opacity: 0.5; }
 
 .has-error {
   opacity: 1;
   color: var(--error);
+
+  .help-block { opacity: 1; }
 }
 
 @include bp($bp-desktop) {
