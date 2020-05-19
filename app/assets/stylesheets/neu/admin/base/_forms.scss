@@ -102,7 +102,10 @@ select {
   }
 }
 
-.help-block { opacity: 0.5; }
+.help-block {
+  font-size: var(--fs-small);
+  opacity: 0.5;
+}
 
 .has-error {
   opacity: 1;
