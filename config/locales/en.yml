@@ -1,0 +1,6 @@
+en:
+  neu_admin:
+    search: "Search"
+    are_you_sure: "Are you sure?"
+    new_resource: "New %{resource}"
+    edit_resource: "Edit %{resource}"

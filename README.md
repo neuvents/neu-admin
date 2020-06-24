@@ -1,4 +1,5 @@
 ## Installation
+
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -6,6 +7,7 @@ gem 'neu-admin', github: 'neuvents/neu-admin'
 ```
 
 And then execute:
+
 ```bash
 $ bundle
 ```
@@ -81,7 +83,7 @@ end
 
 ## Views
 
-For the Views you need to supply your own index.html.erb and _form.html.erb
+For the Views you need to supply your own index.html.erb and \_form.html.erb
 
 ```bash
 app/views/admin/events/index.html.erb
@@ -196,8 +198,40 @@ nav_link('Events', events_path, 'admin/events') # label, url, controller name
 footer('Neuvents') # Copyright information
 ```
 
+### Translations
+
+The following translations are available:
+
+```yml
+en:
+  neu_admin:
+    search: "Search"
+    are_you_sure: "Are you sure?"
+    new_resource: "New %{resource}"
+    edit_resource: "Edit %{resource}"
+```
+
+It is possible to custumize the resource name for the `new` and `edit` pages like so:
+
+```yml
+en:
+  neu_admin:
+    search: "Search"
+    are_you_sure: "Are you sure?"
+    new_resource: "New %{resource}"
+    edit_resource: "Edit %{resource}"
+    resources:
+      product: "awesome product"
+```
+
+This way on the `new` form the title would be: `New awesome product`.
+
+In order to translate just add this structure in the desired language in your rails appplication.
+
 ## Contributing
+
 TODO: Contribution directions go here.
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

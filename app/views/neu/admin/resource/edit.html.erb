@@ -1,5 +1,5 @@
 <div class="page-title">
-  <h1>Edit <%= @resource.class.name.underscore.humanize.downcase %></h1>
+  <%= t('neu_admin.edit_resource', resource: resource_label(@resource)) %>
 </div>
 
 <%= render 'form' %>
