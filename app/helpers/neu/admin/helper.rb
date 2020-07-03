@@ -46,8 +46,9 @@ module Neu::Admin::Helper
   end
 
   def resource_label(resource)
+    key = resource.class.name.underscore.downcase
     label = resource.class.name.underscore.humanize.downcase
 
-    I18n.t("neu_admin.resources.#{label}", default: label)
+    I18n.t("neu_admin.resources.#{key}", default: label)
   end
 end
