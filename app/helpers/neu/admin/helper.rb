@@ -8,7 +8,16 @@ module Neu::Admin::Helper
   end
 
   def action_link(action, url, opts = {})
-    opts = opts.merge(method: :delete, data: {confirm: t('neu_admin.are_you_sure')}) if action == :delete
+    opts = opts.merge(
+      # For older rails versions
+      method: :delete,
+      data: {
+        # Cover the rails 7 case
+        turbo_confirm: t('neu_admin.are_you_sure'), turbo_method: :delete,
+        # For older rails versions
+        confirm: t('neu_admin.are_you_sure')
+      }
+    ) if action == :delete
     link_to icon(action), url, opts
   end
 
