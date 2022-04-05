@@ -1,9 +1,3 @@
-:root {
-  --spacing-sm: var(--gutter);
-  --spacing-md: calc(var(--gutter) * 2);
-  --spacing-lg: calc(var(--gutter) * 4);
-}
-
 .spacing-top-sm { padding-top: var(--spacing-sm); }
 .spacing-bottom-sm { padding-bottom: var(--spacing-sm); }
 

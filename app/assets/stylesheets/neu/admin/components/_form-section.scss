@@ -1,0 +1,29 @@
+.form-section {
+  margin-bottom: var(--spacing-md);
+  border: 0;
+  padding: 0;
+
+  legend {
+    font-size: var(--fs-regular);
+    font-weight: 700;
+  }
+
+  @include bp($bp-mobile) {
+    .legend {
+      margin-bottom: var(--spacing-xs);
+    }
+  }
+
+  @include bp($bp-desktop) {
+    display: flex;
+    gap: var(--gutter);
+
+    .legend {
+      width: 200px;
+    }
+
+    .fields {
+      width: 100%;
+    }
+  }
+}

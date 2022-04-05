@@ -6,7 +6,9 @@
 
 button,
 label,
-input[type="submit"] { cursor: pointer; }
+input[type="submit"] {
+  cursor: pointer;
+}
 
 h1,
 h2,
@@ -21,18 +23,25 @@ h6 {
 p,
 ul,
 ol,
-table { padding-bottom: 1em; }
+table {
+  padding-bottom: 1em;
+}
 
 table {
   width: 100%;
 
   th,
-  td { text-align: left; }
+  td {
+    text-align: left;
+  }
 }
 
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
-iframe { display: block; }
+iframe {
+  display: block;
+}

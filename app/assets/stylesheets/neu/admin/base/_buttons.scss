@@ -8,21 +8,26 @@
   margin: 0;
   margin-right: 0.75em;
   border: 2px solid transparent;
+  border-radius: 4px;
   width: auto;
   overflow: visible;
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
   font: inherit;
+  font-size: var(--fs-base);
   font-weight: 700;
   line-height: normal;
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
   text-decoration: none;
-  // border-radius: 5px;
   transition: all ease-in-out 0.3s;
 
   &:last-of-type { margin-right: 0; }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &.btn-pill { border-radius: calc(var(--gutter) * 2); }
 
@@ -34,35 +39,24 @@
   border-color: var(--brand);
   background-color: var(--brand);
   color: var(--white);
-
-  &:hover { opacity: 0.8; }
 }
 
 .btn-success {
   border-color: var(--success);
   background-color: var(--success);
   color: var(--white);
-
-  &:hover { opacity: 0.8; }
 }
 
 .btn-danger {
   border-color: var(--error);
   background-color: var(--error);
   color: var(--white);
-
-  &:hover { opacity: 0.8; }
 }
 
 .btn-secondary {
-  border-color: var(--black);
+  border-color: var(--lighter-gray);
+  background-color: var(--lighter-gray);
   color: var(--black);
-
-  &:hover {
-    background-color: var(--black);
-    color: var(--white);
-    opacity: 0.8;
-  }
 }
 
 .btn-text {

@@ -1,23 +1,3 @@
-@import url('https://rsms.me/inter/inter-ui.css');
-@import url('https://indestructibletype-fonthosting.github.io/renner.css');
-
-:root {
-  --base-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-  --fs-base: 16px;
-  --base-line-height: 1.666;
-  --fraction: 1.25;
-
-  --fs-small: calc(var(--fs-base) / var(--fraction));
-  --fs-tiny: calc(var(--fs-small) / var(--fraction));
-  --fs-medium: calc(var(--fs-base) * var(--fraction));
-  --fs-large: calc(var(--fs-medium) * var(--fraction));
-  --fs-xlarge: calc(var(--fs-large) * var(--fraction));
-  --fs-xxlarge: calc(var(--fs-xlarge) * var(--fraction));
-  --fs-huge: calc(var(--fs-xxlarge) * var(--fraction));
-}
-
 body {
   color: var(--black);
   font-family: var(--base-font);
@@ -28,11 +8,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a { color: var(--brand); }
+a {
+  color: var(--brand);
+}
 
-small { font-size: var(--fs-small); }
-.tiny { font-size: var(--fs-tiny); }
-.muted { opacity: 0.4; }
+small {
+  font-size: var(--fs-small);
+}
+
+.tiny {
+  font-size: var(--fs-tiny);
+}
 
 h1,
 h2,
@@ -40,70 +26,48 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font); // style
+  font-family: var(--heading-font);
   line-height: var(--base-line-height);
-  font-weight: 700; // style
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 h1 {
-  line-height: 1.2;
-
-  @include bp($bp-desktop) {
-    font-size: var(--fs-huge);
-  }
-
-  @include bp($bp-mobile) {
-    font-size: 40px;
-  }
+  font-size: var(--fs-huge);
 }
 
 h2 {
-  line-height: 1.2;
-
-  @include bp($bp-desktop) {
-    font-size: var(--fs-xxlarge);
-  }
-
-  @include bp($bp-mobile) {
-    font-size: 36px;
-  }
+  font-size: var(--fs-xxlarge);
 }
 
 h3 {
-  line-height: 1.3;
-
-  @include bp($bp-desktop) {
-    font-size: var(--fs-xlarge);
-  }
-
-  @include bp($bp-mobile) {
-    font-size: 30px;
-  }
+  font-size: var(--fs-xlarge);
 }
 
 h4 {
-  font-size: var(--fs-medium);
-  line-height: 1.3;
+  font-size: var(--fs-large);
 }
 
-h5,
+h5 {
+  font-size: var(--fs-medium);
+}
+
 h6 {
   font-size: var(--fs-base);
-}
-
-h6 {
-  font-family: var(--base-font);
-  font-weight: bold;
-  text-transform: none;
 }
 
 ul,
 ol {
   list-style-position: inside;
 
-  li { margin-bottom: 0.5em; }
+  li {
+    margin-bottom: 0.5em;
+  }
 
-  ul, li { margin-left: 1em; }
+  ul,
+  li {
+    margin-left: 1em;
+  }
 }
 
 blockquote {
@@ -113,22 +77,3 @@ blockquote {
   font-weight: 300;
   font-style: italic;
 }
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 1em;
-
-  th,
-  td {
-    padding: 0.5em;
-    text-align: left;
-  }
-
-  tr {
-    border-bottom: 1px solid #ddd;
-  }
-}
-
-.text-center { text-align: center; }
-.text-right { text-align: right; }

@@ -1,7 +1,12 @@
 .admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   margin-bottom: 2em;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--lighter-gray);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .admin-header-wrapper {
@@ -9,28 +14,53 @@
   justify-content: space-between;
   align-items: center;
 
-  .logo, img { display: block; }
+  .logo, img {
+    display: block;
+    height: 28px;
+  }
 
   .logo {
     &:hover { background-color: transparent; }
   }
 
   a {
-    color: var(--white);
     font-weight: 500;
     text-decoration: none;
+    color: var(--black);
 
-    &:hover { color: var(--lighter-gray); }
+    &:hover { color: var(--true-black); }
   }
 
   nav {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+
     a {
       display: inline-block;
-      padding: 1em;
+      padding: 1em 0;
 
       &:hover, &.current {
-        color: var(--true-white);
-        background-color: var(--darker-gray);
+        position: relative;
+        color: var(--brand);
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 2;
+          height: 4px;
+          background-color: var(--lighter-gray);
+        }
+      }
+
+      &.current {
+        &:before {
+          background-color: var(--brand);
+        }
       }
     }
   }
@@ -46,14 +76,27 @@
       display: none;
       position: absolute;
       left: 0;
-      padding: 0;
-      margin: 0;
-      margin-top: 0.75em;
       z-index: 1;
       width: 200px;
-      background-color: var(--black);
+      margin: 0;
+      margin-top: 0.75em;
+      padding: 0;
+      background-color: var(--true-white);
+      border-radius: 4px;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 
-      a { display: block; }
+      a {
+        display: block;
+        padding: 1em;
+
+        &:before {
+          display: none;
+        }
+
+        &:hover {
+          color: var(--brand);
+        }
+      }
     }
 
     &:hover {
@@ -63,6 +106,10 @@
 
   .profile {
     display: flex;
+
+    .icon {
+      filter: invert(1);
+    }
 
     .username {
       margin-right: 1em;

@@ -8,25 +8,25 @@ module Neu::Admin::Helper
   end
 
   def action_link(action, url, opts = {})
-    opts = opts.merge(
-      # For older rails versions
-      method: :delete,
-      data: {
-        # Cover the rails 7 case
-        turbo_confirm: t('neu_admin.are_you_sure'), turbo_method: :delete,
+    if action == :delete
+      opts = opts.merge(
         # For older rails versions
-        confirm: t('neu_admin.are_you_sure')
-      }
-    ) if action == :delete
+        method: :delete,
+        data: {
+          # Cover the rails 7 case
+          turbo_confirm: t('neu_admin.are_you_sure'), turbo_method: :delete,
+          # For older rails versions
+          confirm: t('neu_admin.are_you_sure')
+        }
+      )
+    end
     link_to icon(action), url, opts
   end
 
   def search_bar(search_location, &block)
     content_tag(:div, class: 'search') do
       content_tag(:h3, t('neu_admin.search')) +
-      simple_form_for(@search, as: :f, method: :get, url: search_location) do |f|
-        yield f
-      end
+        simple_form_for(@search, as: :f, method: :get, url: search_location, &block)
     end
   end
 
@@ -59,5 +59,16 @@ module Neu::Admin::Helper
     label = resource.class.name.underscore.humanize.downcase
 
     I18n.t("neu_admin.resources.#{key}", default: label)
+  end
+
+  def form_section(title:, description: nil, &block)
+    tag.fieldset(class: 'form-section') do
+      (tag.div class: 'legend' do
+        tag.legend(title) +
+        tag.small(description, class: 'muted')
+      end) + (tag.div(class: 'fields') do
+        yield block
+      end)
+    end
   end
 end

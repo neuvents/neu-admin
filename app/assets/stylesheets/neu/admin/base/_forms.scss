@@ -1,52 +1,54 @@
-textarea { resize: vertical; }
+.form-group {
+  margin-bottom: 1em;
 
-select {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hldnJvbi1kb3duIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
-  background-repeat: no-repeat;
-  background-position: center right 0.5em;
-}
+  textarea { resize: vertical; }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="tel"],
-input[type="password"],
-input[type="search"],
-textarea,
-select {
-  display: block;
-  width: 100%;
-  padding: 0.5em 0.5em;
-  border: none;
-  border-bottom: 2px solid var(--dark-gray);
-  border-radius: 0;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: var(--lighter-gray);
-  color: var(--black);
-  font-family: var(--base-font);
-  font-size: 1em;
-  line-height: 1.5;
-  transition: all 0.2s ease-in-out;
+  select {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hldnJvbi1kb3duIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: center right 0.5em;
+  }
 
-  &:focus { border-color: var(--brand-light); }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+    padding: 0.5em 0.5em;
+    border: none;
+    border-bottom: 1px solid var(--light-gray);
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--lighter-gray);
+    color: var(--black);
+    font-family: var(--base-font);
+    font-size: 1em;
+    line-height: 1.5;
+    transition: all 0.2s ease-in-out;
 
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+    &:focus { border-color: var(--brand-light); }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
 }
 
-.form-group { margin-bottom: 1em; }
-
 .control-label {
   color: var(--black);
-  font-size: 1em;
+  font-size: var(--fs-small);
   font-weight: 600;
 
-  span.optional { color: var(--gray); }
+  span.optional { color: var(--light-gray); }
 }
 
 .checkbox {
@@ -103,15 +105,32 @@ select {
 }
 
 .help-block {
+  padding-bottom: 0;
   font-size: var(--fs-small);
   opacity: 0.5;
 }
 
 .has-error {
-  opacity: 1;
-  color: var(--error);
+  .control-label {
+    color: var(--error);
+  }
 
-  .help-block { opacity: 1; }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="url"],
+  input[type="date"],
+  input[type="datetime-local"],
+  textarea,
+  select {
+    border-color: var(--error);
+  }
+
+  .help-block {
+    color: var(--error);
+  }
 }
 
 @include bp($bp-desktop) {

@@ -1,3 +1,19 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+
+  th,
+  td {
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
 .table-wrapper {
   @include bp($bp-mobile) {
     overflow-x: auto;
