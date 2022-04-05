@@ -62,13 +62,21 @@ module Neu::Admin::Helper
   end
 
   def form_section(title:, description: nil, &block)
-    tag.fieldset(class: 'form-section') do
+    tag.fieldset(class: 'form-section', id: title.parameterize) do
       (tag.div class: 'legend' do
         tag.legend(title) +
         tag.small(description, class: 'muted')
       end) + (tag.div(class: 'fields') do
         yield block
       end)
+    end
+  end
+
+  def form_nav(items = [])
+    tag.nav class: 'form-sections-nav' do
+      (items.map do |section|
+        link_to section, "##{section.parameterize}"
+      end).reduce(&:+)
     end
   end
 end

@@ -1,0 +1,22 @@
+.form-sections-nav {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  gap: var(--gutter);
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include bp($bp-mobile) {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  @include bp($bp-desktop) {
+    flex-direction: column;
+  }
+}
