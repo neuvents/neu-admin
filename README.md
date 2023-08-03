@@ -164,28 +164,6 @@ Here's an example with simple_form:
 
 This library provides the following helpers:
 
-#### Page Title
-
-```ruby
-page_title('Events')
-```
-
-#### Icon
-
-Uses a limited set of icons (user, logout, edit, delete, close, check). But you can define your own by creating CSS class scoped under `icon`. For more details see `_icons.scss`.
-
-```ruby
-icon(:user)
-```
-
-#### Toolbar
-
-```erb
-<%= toolbar do %>
-  <%= link_to 'Create', new_event_path, class: 'btn-success' %>
-<% end %>
-```
-
 #### Nav helper for the main menu
 
 ```ruby
