@@ -9,40 +9,6 @@
   </head>
 
   <body>
-    <div class="admin-header">
-      <div class="container">
-        <div class="admin-header-wrapper">
-          <%= link_to 'Admin', '#', class: 'logo' %>
-
-          <nav>
-            <%= nav_link 'Module 1', '#', 'parties' %>
-            <%= nav_link 'Events', events_path, 'events' %>
-            <%= nav_link 'Module 3', '#', '#' %>
-
-            <div class="sub-menu">
-              Settings
-              <nav>
-                <%= link_to 'Administrators', '#' %>
-              </nav>
-            </div>
-          </nav>
-
-          <div class="profile">
-            <div class="username">
-              <%= icon(:user) %>
-              Pencho
-            </div>
-
-            <%= link_to icon(:logout), '#', method: :delete, data: {turbo_method: :delete} %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <%= yield %>
-    </div>
-
-    <%= footer('Neuvents') %>
+    <%= yield %>
   </body>
 </html>

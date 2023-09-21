@@ -1,13 +1,9 @@
 module Neu::Admin::Helper
-  def icon(name)
-    content_tag :i, nil, class: "icon #{name}"
-  end
-
   def yes_no(status)
-    icon(status ? :check : :close)
+    status ? '✓' : '×'
   end
 
-  def action_link(action, url, opts = {})
+  def action_link(action, url, opts = {}, &block)
     if action == :delete
       opts = opts.merge(
         # For older rails versions
@@ -20,37 +16,20 @@ module Neu::Admin::Helper
         }
       )
     end
-    link_to icon(action), url, opts
+
+    link_to(url, opts) do
+      yield block
+    end
+  end
+
+  def nav_link(label, url, controller_name, current_class)
+    link_to(label, url, class: "nav-link #{(params[:controller] == controller_name ? current_class : '')}")
   end
 
   def search_bar(search_location, &block)
     content_tag(:div, class: 'search') do
       content_tag(:h3, t('neu_admin.search')) +
         simple_form_for(@search, as: :f, method: :get, url: search_location, &block)
-    end
-  end
-
-  def page_title(title)
-    content_tag(:div, class: 'page-title') do
-      content_tag(:h1, title)
-    end
-  end
-
-  def toolbar(&block)
-    content_tag(:div, class: 'btn-toolbar') do
-      yield block
-    end
-  end
-
-  def nav_link(label, url, controller_name)
-    link_to(label, url, class: (params[:controller] == controller_name ? 'current' : ''))
-  end
-
-  def footer(copyright = 'Administration')
-    content_tag(:div, class: 'footer') do
-      content_tag(:div, class: 'container') do
-        content_tag(:small, "© #{Date.today.year}, #{copyright}")
-      end
     end
   end
 
